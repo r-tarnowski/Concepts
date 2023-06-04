@@ -9,13 +9,21 @@ void printHeader() {
    cout << endl;
    cout << "================================================" << endl;
    cout << "  C++20 The Complete Guide by Nicolai Josuttis  " << endl;
-   cout << "                  Concepts                      "<< endl;
+   cout << "                  Concepts                      " << endl;
+   cout << "             Motivating Example                 " << endl;
    cout << "================================================" << endl;
    cout << endl;
 }
 
 template< typename T >
-concept IsPointer = std::is_pointer_v<T>;
+concept IsRawPointer = std::is_pointer_v<T>;
+
+template< typename T >
+concept IsPointer = requires ( T p ) {
+                       *p;                                // operator * has to be valid
+                       p == nullptr;                      // can compare with nullptr
+                       { p < p } -> std::same_as< bool >; // yields bool
+                    };
 
 template< typename T >
 requires ( ! IsPointer<T> )
