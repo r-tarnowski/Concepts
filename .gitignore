@@ -7,5 +7,6 @@ CMakeFiles/*
 Testing/*
 bin/motivating_example
 bin/complete_example
+bin/constraining_member_function
 build.ninja
 cmake_install.cmake
