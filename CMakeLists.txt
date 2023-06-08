@@ -14,6 +14,7 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${BIN_DIR})
 set(TARGET_MOTIVATING_EXAMPLE motivating_example)
 set(TARGET_COMPLETE_EXAMPLE complete_example)
 set(TARGET_CONSTRAINING_MEMBER_FUNCTIONS constraining_member_function)
+set(TARGET_DISABLE_GENERIC_CODE disable_generic_code)
 
 
 include_directories(${INCLUDE_DIR} "/export/devel/platform/boost/$ENV{BOOST_VERSION}/boost/include")
@@ -26,6 +27,8 @@ set(CMAKE_CXX_FLAGS "-fPIC -O3 -Wall -Wno-unused-function -std=c++20")
 set(SOURCES_MOTIVATING_EXAMPLE ${SRC_DIR}/MotivatingExample.cpp)
 set(SOURCES_COMPLETE_EXAMPLE ${SRC_DIR}/CompleteExample.cpp)
 set( SOURCES_CONSTRAINING_MEMBER_FUNCTIONS ${SRC_DIR}/ConstrainingMemberFunction.cpp )
+set( SOURCES_DISABLE_GENERIC_CODE ${SRC_DIR}/DisableGenericCode.cpp )
+
 
 
 
@@ -34,6 +37,7 @@ set( SOURCES_CONSTRAINING_MEMBER_FUNCTIONS ${SRC_DIR}/ConstrainingMemberFunction
 add_executable(${TARGET_MOTIVATING_EXAMPLE} ${SOURCES_MOTIVATING_EXAMPLE})
 add_executable(${TARGET_COMPLETE_EXAMPLE} ${SOURCES_COMPLETE_EXAMPLE})
 add_executable(${TARGET_CONSTRAINING_MEMBER_FUNCTIONS} ${SOURCES_CONSTRAINING_MEMBER_FUNCTIONS})
+add_executable(${TARGET_DISABLE_GENERIC_CODE} ${SOURCES_DISABLE_GENERIC_CODE})
 
 
 #target_link_libraries(${TARGET_SUB} ${APP_LINK_LIBS})
