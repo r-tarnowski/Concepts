@@ -9,5 +9,6 @@ bin/motivating_example
 bin/complete_example
 bin/constraining_member_function
 bin/disable_generic_code
+bin/call_different_functions
 build.ninja
 cmake_install.cmake

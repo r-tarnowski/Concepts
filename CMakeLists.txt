@@ -15,6 +15,8 @@ set(TARGET_MOTIVATING_EXAMPLE motivating_example)
 set(TARGET_COMPLETE_EXAMPLE complete_example)
 set(TARGET_CONSTRAINING_MEMBER_FUNCTIONS constraining_member_function)
 set(TARGET_DISABLE_GENERIC_CODE disable_generic_code)
+set(TARGET_CALL_DIFFERENT_FUNCTIONS call_different_functions)
+
 
 
 include_directories(${INCLUDE_DIR} "/export/devel/platform/boost/$ENV{BOOST_VERSION}/boost/include")
@@ -28,6 +30,7 @@ set(SOURCES_MOTIVATING_EXAMPLE ${SRC_DIR}/MotivatingExample.cpp)
 set(SOURCES_COMPLETE_EXAMPLE ${SRC_DIR}/CompleteExample.cpp)
 set( SOURCES_CONSTRAINING_MEMBER_FUNCTIONS ${SRC_DIR}/ConstrainingMemberFunction.cpp )
 set( SOURCES_DISABLE_GENERIC_CODE ${SRC_DIR}/DisableGenericCode.cpp )
+set( SOURCES_CALL_DIFFERENT_FUNCTIONS ${SRC_DIR}/CallDifferentFunctions.cpp )
 
 
 
@@ -38,6 +41,7 @@ add_executable(${TARGET_MOTIVATING_EXAMPLE} ${SOURCES_MOTIVATING_EXAMPLE})
 add_executable(${TARGET_COMPLETE_EXAMPLE} ${SOURCES_COMPLETE_EXAMPLE})
 add_executable(${TARGET_CONSTRAINING_MEMBER_FUNCTIONS} ${SOURCES_CONSTRAINING_MEMBER_FUNCTIONS})
 add_executable(${TARGET_DISABLE_GENERIC_CODE} ${SOURCES_DISABLE_GENERIC_CODE})
+add_executable(${TARGET_CALL_DIFFERENT_FUNCTIONS} ${SOURCES_CALL_DIFFERENT_FUNCTIONS})
 
 
 #target_link_libraries(${TARGET_SUB} ${APP_LINK_LIBS})
