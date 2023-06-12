@@ -3,6 +3,7 @@
 #include <vector>
 #include <list>
 #include <map>
+#include <ranges>
 
 using std::cout;
 using std::endl;
@@ -61,7 +62,7 @@ void add( Coll & coll, const T & val ) {
 }
 
 /*
- Doesn't work. TO DO: check why. 
+// Doesn't work. TO DO: check why.
 template<typename Coll, std::ranges::input_range T>
 requires SupportsPushBack_WithDeclval<Coll>
 void add( Coll & coll, const T & val ) {
@@ -76,7 +77,7 @@ void add( Coll & coll, const T & val ) {
 }
 
 
-Doesn't work. TO DO: check why.
+//Doesn't work. TO DO: check why.
 template<typename Coll, typename T>
 void add( Coll & coll, const T & val ) {
     if constexpr (SupportsPushBack_WithOneParameter<decltype(coll)>) {
