@@ -3,7 +3,9 @@
 #include <vector>
 #include <set>
 #include <ranges>
-#include <atomic>
+#include <map>
+#include <list>
+
 
 using std::cout;
 using std::endl;
@@ -76,7 +78,7 @@ int main(int argc, char *argv[]) {
     add( iVec, 42 );
 
     std::set< int > iSet;
-    std::cout << "add( iVec, 42 ) -> ";
+    std::cout << "add( iSet, 42 ) -> ";
     add( iSet, 42 );
 
     short int s = 42;
@@ -105,6 +107,32 @@ int main(int argc, char *argv[]) {
     std::cout << "add( iVec, vals ) -> ";
     add( iVec, vals );
     //add( dVec, vals ); //ERROR: ConvertsWithoutNarrowing constraints not satisfied
+
+    //my own tests start here
+    std::vector< std::vector<int> > vecOfIntVec = { { 1, 5 }, { 1, 2 }, { 1, 2, 3 } };
+    std::cout  << "add( vecOfIntVec, iVec ) -> ";
+    add( vecOfIntVec, iVec ); //NO ERROR and I don't know why ;-) !!!
+
+    std::vector< std::vector<int> > vecOfIntVec2 = { { 1 }, { 1, 2 }, { 1, 2, 3 } };
+    std::cout  << "add( vecOfIntVec, vecOfIntVec2 ) -> ";
+    add( vecOfIntVec, vecOfIntVec2 );
+
+    std::map<int, int> iMap;
+    std::cout  << "add( iMap, std::make_pair( 1, 2 ) ) -> ";
+    add( iMap, std::make_pair( 1, 2 ) );
+
+    std::map<int, int> iMap2 = { std::make_pair( 4, 5) };
+    std::cout  << "add( iMap, iMap2 ) -> ";
+    add( iMap, iMap2 );
+
+    std::list<int> iList;
+    int intVal = 44;
+    std::cout  << "add( iList, intVal ) -> ";
+    add( iList, intVal );
+
+    std::list<int> iList2 = { 1, 2, 3 };
+    std::cout  << "add( iList, iList2 ) -> ";
+    add( iList, iList2 );
 
     return 0;
 }
