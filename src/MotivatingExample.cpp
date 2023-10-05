@@ -1,4 +1,5 @@
 #include <iostream>
+#include <memory>
 
 
 
@@ -69,6 +70,10 @@ int main(int argc, char *argv[]) {
    int * pY = & y;
    double * pZ = & z;
 
+   std::shared_ptr<double> sharedPtrZ = std::make_shared<double>( z );
+   std::shared_ptr<int> sharedPtrY = std::make_shared<int>( y );
+
+
    std::cout << "Max value of " << x << " and " << y << " : "
              << maxVal( x, y ) << std::endl;
    std::cout << "Max value pointed by " << & x << " and " << & y << " : "
@@ -83,6 +88,10 @@ int main(int argc, char *argv[]) {
              << minVal( pX, pY ) << std::endl;
    std::cout << "Min value pointed by " << pY << " and " << pZ << " : "
              << minVal( pY, pZ ) << std::endl;
+
+   std::cout << std::endl;
+   std::cout << "Min value pointed by " << sharedPtrZ << " and " << sharedPtrY << " : "
+             << minVal( sharedPtrZ, sharedPtrY ) << std::endl;
 
 
    return 0;
